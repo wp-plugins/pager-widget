@@ -16,7 +16,7 @@ Plugin Name: Pager Widget
 Plugin URI: http://dcdcgroup.org/wordpress/pager-widget  
 
 Description: Widget that provides "Parent | Previous | Next" buttons to navigate between pages at the same 
-hierarchy level (and up to the parent page). You can modify the settings to choose which words you want to 
+hierarchy level (and up to the parent page). You can modify the settings to choose the words you want to 
 use. To enable, first activate the plugin, then add the widget to a sidebar in the Widgets settings page.  
 
 Author: Paul Aumer-Ryan, Software Engineer, Distance Course Design & Consulting (DCDC), College of 
