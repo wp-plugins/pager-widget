@@ -6,7 +6,7 @@ Requires at least: 2.8
 Tested up to: 3.0.3
 Stable tag: trunk
 
-This widget prints "Parent | Previous | Next" links to navigate between pages at the same level in the page 
+Prints "Parent | Previous | Next" links to navigate between pages at the same level in the page 
 hierarchy (and up to the parent page). 
 
 == Description ==
@@ -21,8 +21,6 @@ use. To enable, first activate the plugin, then add the widget to a sidebar in t
 
 Author: Paul Aumer-Ryan, Software Engineer, Distance Course Design & Consulting (DCDC), College of 
 Education, University of Hawai'i at Manoa  
-
-Version: 1.5
 
 Author URI: http://combinelabs.com/paul  
 
