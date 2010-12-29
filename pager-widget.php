@@ -5,7 +5,7 @@ Plugin Name: Pager Widget
 Plugin URI: http://dcdcgroup.org
 Description: Widget that provides "Parent | Previous | Next" buttons to navigate between pages at the same hierarchy level (and up to the parent page). You can modify the settings to choose which words you want to use. To enable, first activate the plugin, then add the widget to a sidebar in the Widgets settings page.
 Author: Paul Aumer-Ryan, Programmer, Distance Course Design & Consulting (DCDC), College of Education, University of Hawai'i at Manoa
-Version: 1.4
+Version: 1.5
 Author URI: http://combinelabs.com/paul
 */
 
@@ -50,7 +50,10 @@ class PagerWidget extends WP_Widget {
     $children = wp_list_pages("child_of={$post->ID}&echo=0");
     $siblings = wp_list_pages("title_li=&child_of={$post->post_parent}&echo=0&depth=1");
 
-    if (!(($hierarchyDepth==$pageDepth && $siblings) || ($hierarchyDepth==($pageDepth-1) && $children))) return;
+    if (!(($hierarchyDepth==$pageDepth && $siblings) || ($hierarchyDepth==($pageDepth-1) && $children))) {
+      echo $after_widget;
+      return;
+    }
   
     // Print links to parent, previous, and next page
     echo "<div id='linksPrevNext'>";
