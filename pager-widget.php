@@ -5,7 +5,7 @@ Plugin Name: Pager Widget
 Plugin URI: http://dcdcgroup.org
 Description: Widget that provides "Parent | Previous | Next" buttons to navigate between pages at the same hierarchy level (and up to the parent page). You can modify the settings to choose which words you want to use. To enable, first activate the plugin, then add the widget to a sidebar in the Widgets settings page.
 Author: Paul Aumer-Ryan, Programmer, Distance Course Design & Consulting (DCDC), College of Education, University of Hawai'i at Manoa
-Version: 1.5
+Version: 1.6
 Author URI: http://combinelabs.com/paul
 */
 
@@ -59,37 +59,45 @@ class PagerWidget extends WP_Widget {
     echo "<div id='linksPrevNext'>";
     if ($hierarchyDepth==($pageDepth-1) && $children) { // we're on a level $pageDepth-1 page that has children
       // Get links to children pages
-      $numberOfMatches = preg_match_all("/<a href=[\"|\'](.*?)[\"|\']/i",$children,$matches,PREG_PATTERN_ORDER);
+      $numberOfMatches = preg_match_all("/<a href=[\"|\'](.*?)[\"|\'].*?>(.*?)<\/a>/i",$children,$matches,PREG_PATTERN_ORDER);
       $parentURI = get_permalink($post->ID);
+      $parentTitle = $post->post_title;
       $nextURI = "";
-      if (count($matches[1]) > 0 ) $nextURI = $matches[1][0];
+      if (count($matches[1]) > 0 ) {
+        $nextURI = $matches[1][0];
+        $nextTitle = $matches[2][0];
+      }
       if (strlen($nextURI)>0) {
-        echo "<a href='$nextURI'>$labelNext</a>";
+        echo "<a href='$nextURI'>".str_replace("%title",$nextTitle,$labelNext)."</a>";
       }
     } else if ($hierarchyDepth==$pageDepth && $siblings) { // level $pageDepth page that has siblings
       // Get links to sibling pages
-      $numberOfMatches = preg_match_all("/<a href=[\"|\'](.*?)[\"|\']/i",$siblings,$matches,PREG_PATTERN_ORDER);
+      $numberOfMatches = preg_match_all("/<a href=[\"|\'](.*?)[\"|\'].*?>(.*?)<\/a>/i",$siblings,$matches,PREG_PATTERN_ORDER);
       // Get links to parent, previous, and next page
       $currentSlug = get_permalink($post->ID); //$post->post_name;
       $parentURI = get_permalink($post->post_parent);
+      $parentTitle = $post->post_title;
       $prevURI = get_permalink($post->post_parent);
       $nextURI = "";
       for ($i=0; $i<count($matches[1]); $i++) {
         if (strpos($matches[1][$i],$currentSlug) !== FALSE) { // we found the current page
-          if ($i < count($matches[1])-1) 
+          if ($i < count($matches[1])-1) {
             $nextURI = $matches[1][$i+1];
+            $nextTitle = $matches[2][$i+1];
+          }
           break;
         }
         $prevURI = $matches[1][$i];
+        $prevTitle = $matches[2][$i];
       }
-      echo "  <a href='$parentURI'>$labelParent</a>";
+      echo "  <a href='$parentURI'>".str_replace("%title",$parentTitle,$labelParent)."</a>";
       echo "  &nbsp;&nbsp; | &nbsp;&nbsp;";
       if (strlen($prevURI)>0 && $prevURI!==$parentURI)
-        echo "<a href='$prevURI'>$labelPrev</a>";
+        echo "<a href='$prevURI'>".str_replace("%title",$prevTitle,$labelPrev)."</a>";
       if (strlen($prevURI)>0 && $prevURI!==$parentURI && strlen($nextURI)>0)
         echo "&nbsp;&nbsp; | &nbsp;&nbsp;";
       if (strlen($nextURI)>0)
-        echo "<a href='$nextURI'>$labelNext</a>";
+        echo "<a href='$nextURI'>".str_replace("%title",$nextTitle,$labelNext)."</a>";
     }
     echo "</div>";
 
@@ -145,6 +153,7 @@ class PagerWidget extends WP_Widget {
     echo "<input type='text' class='widefat' id='$idDepth' name='$nameDepth' value='$valueDepth' />";
     echo "</label><br/><br/>";
     
+    echo "<p>Note: you can use %title to display the page title in the pager link</p>";
     echo "<p>Note: you can apply CSS styles to #linksPrevNext</p><br/><br/>";
 
     $idSubmit = $this->get_field_id('submit');
