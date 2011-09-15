@@ -43,6 +43,9 @@ Email me at paul@ischool.utexas.edu and I'll try to get back to you quickly.
 
 == Changelog ==
 
+= 1.6 =
+* Add variable %title so you can display the name of the page on the pager links
+
 = 1.5 =
 * Bug fix release (missed an $after_widget print on pages without the pager)
 
