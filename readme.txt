@@ -43,6 +43,9 @@ Email me at paul@ischool.utexas.edu and I'll try to get back to you quickly.
 
 == Changelog ==
 
+= 1.7 =
+* Add Story Mode, which pages through all site content, not just content under a parent item. It basically walks through the site's tree structure.
+
 = 1.6 =
 * Add variable %title so you can display the name of the page on the pager links
 
