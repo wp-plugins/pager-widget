@@ -43,6 +43,9 @@ Email me at paul@ischool.utexas.edu and I'll try to get back to you quickly.
 
 == Changelog ==
 
+= 1.7.1 =
+* Fixed a sort order bug with the new story mode (oops).
+
 = 1.7 =
 * Add Story Mode, which pages through all site content, not just content under a parent item. It basically walks through the site's tree structure.
 
