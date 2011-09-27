@@ -43,6 +43,9 @@ Email me at paul@ischool.utexas.edu and I'll try to get back to you quickly.
 
 == Changelog ==
 
+= 1.7.2 =
+* Fixed a story mode bug where the second-to-last page wouldn't display a next link.
+
 = 1.7.1 =
 * Fixed a sort order bug with the new story mode (oops).
 
