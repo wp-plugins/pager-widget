@@ -4,8 +4,8 @@
 Plugin Name: Pager Widget
 Plugin URI: http://dcdcgroup.org
 Description: Widget that provides "Parent | Previous | Next" buttons to navigate between pages at the same hierarchy level (and up to the parent page). You can modify the settings to choose which words you want to use. To enable, first activate the plugin, then add the widget to a sidebar in the Widgets settings page.
-Author: Paul Aumer-Ryan, Programmer, Distance Course Design & Consulting (DCDC), College of Education, University of Hawai'i at Manoa
-Version: 1.7.2
+Author: Paul Ryan, Programmer, Distance Course Design & Consulting (DCDC), College of Education, University of Hawai'i at Manoa
+Version: 1.7.3
 Author URI: http://combinelabs.com/paul
 */
 

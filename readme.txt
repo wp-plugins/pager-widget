@@ -3,7 +3,7 @@ Contributors: figureone
 Donate link: N/A
 Tags: pager, navigation, next, back, previous, menu, widget
 Requires at least: 2.8
-Tested up to: 3.0.3
+Tested up to: 3.9.2
 Stable tag: trunk
 
 Prints "Parent | Previous | Next" links to navigate between pages at the same level in the page 
@@ -42,6 +42,9 @@ Email me at paul@ischool.utexas.edu and I'll try to get back to you quickly.
 1. The Pager Widget added to the page bottom widget area.
 
 == Changelog ==
+
+= 1.7.3 =
+* Updated for WordPress 3.9.
 
 = 1.7.2 =
 * Fixed a story mode bug where the second-to-last page wouldn't display a next link.
