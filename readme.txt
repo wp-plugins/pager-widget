@@ -1,10 +1,11 @@
 === Pager Widget ===
 Contributors: figureone
-Donate link: N/A
 Tags: pager, navigation, next, back, previous, menu, widget
 Requires at least: 2.8
-Tested up to: 3.9.2
+Tested up to: 4.2.1
 Stable tag: trunk
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Prints "Parent | Previous | Next" links to navigate between pages at the same level in the page 
 hierarchy (and up to the parent page). 
@@ -13,16 +14,11 @@ hierarchy (and up to the parent page).
 
 Plugin Name: Pager Widget  
 
-Plugin URI: http://dcdcgroup.org/wordpress/pager-widget  
+Plugin URI: https://dcdc.coe.hawaii.edu/wordpress/pager-widget/
 
 Description: Widget that provides "Parent | Previous | Next" buttons to navigate between pages at the same 
 hierarchy level (and up to the parent page). You can modify the settings to choose the words you want to 
 use. To enable, first activate the plugin, then add the widget to a sidebar in the Widgets settings page.  
-
-Author: Paul Aumer-Ryan, Software Engineer, Distance Course Design & Consulting (DCDC), College of 
-Education, University of Hawai'i at Manoa  
-
-Author URI: http://combinelabs.com/paul  
 
 == Installation ==
 
@@ -32,10 +28,6 @@ Author URI: http://combinelabs.com/paul
 1. Adjust the settings, if necessary, after placing the widget in a widget area
 
 == Frequently Asked Questions ==
-
-= What if I have a question? =
-
-Email me at paul@ischool.utexas.edu and I'll try to get back to you quickly.
 
 == Screenshots ==
 
@@ -83,6 +75,6 @@ First public release, no need to upgrade..
 
 == About ==
 
-This plugin was developed under the auspices of the Distance Course Design & Consulting group in the
+This plugin was developed at the Distance Course Design & Consulting group in the
 College of Education at the University of Hawai'i at Manoa. You can find out more about DCDC at:
-http://www.dcdcgroup.org
+https://dcdc.coe.hawaii.edu
